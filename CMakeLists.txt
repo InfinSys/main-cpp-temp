@@ -1,9 +1,9 @@
 
-#================================
+#==============================
 #
-#	Root CMakeLists.txt
+#     Root CMakeLists.txt
 #
-#================================
+#==============================
 
 
 
@@ -20,6 +20,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
+
+
+include(FetchContent)
 
 
 set(CLI_DEBUGGING OFF)
@@ -50,9 +53,11 @@ endif()
 #add_subdirectory(src)
 
 
-#add_subdirectory(3rdparty/googletest)
+if(UNIT_TESTING)
+	add_subdirectory(3rdparty/googletest)
+endif()
 
-# GoogleTest Dependency Handling...
-
-#add_subdirectory(tests)
+if(CLI_DEBUGGING OR UNIT_TESTING)
+	#add_subdirectory(tests)
+endif()
 
