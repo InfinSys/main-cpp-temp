@@ -6,7 +6,7 @@
 
 
 set(${LOCAL_PROJECT_SCOPE}_PUBLISHER "<PUBLISHER/CREATOR>" CACHE STRING "Product publisher" FORCE)
-set(${LOCAL_PROJECT_SCOPE}_PRODUCT_TYPE "Software" CACHE STRING "Product type" FORCE)
+set(${LOCAL_PROJECT_SCOPE}_PRODUCT_TYPE "Executable" CACHE STRING "Product type" FORCE)
 set(${LOCAL_PROJECT_SCOPE}_INTERFACE_TYPE "CLI" CACHE STRING "Product interface type" FORCE)
 set(${LOCAL_PROJECT_SCOPE}_PRODUCT_UUID "<UNIQUE_IDENTIFIER>" CACHE STRING "Product universally unique identifier" FORCE)
 set(${LOCAL_PROJECT_SCOPE}_PRODUCT_NAME "<SOFTWARE_FULL_NAME>" CACHE STRING "Product official name" FORCE)
@@ -19,7 +19,7 @@ set(${LOCAL_PROJECT_SCOPE}_META_PREFIX "${LOCAL_PROJECT_SCOPE}" CACHE STRING "Pr
 if(WIN32)
 	set(${LOCAL_PROJECT_SCOPE}_TARGET_PLATFORM 1 CACHE STRING "Product target platform tip" FORCE)
 
-	if(${LOCAL_PROJECT_SCOPE}_PRODUCT_TYPE STREQUAL "Software")
+	if(${LOCAL_PROJECT_SCOPE}_PRODUCT_TYPE STREQUAL "Executable")
 		set(
 			${LOCAL_PROJECT_SCOPE}_PRIMARY_BINARY_NAME
 			
@@ -35,10 +35,20 @@ elseif(UNIX)
 endif()
 
 
-if(${LOCAL_PROJECT_SCOPE}_PRODUCT_TYPE STREQUAL "Software" AND ${LOCAL_PROJECT_SCOPE}_INTERFACE_TYPE STREQUAL "API")
-	message(FATAL_ERROR "Project configured as software but attempting to create a library!")
+if(
+	NOT ${LOCAL_PROJECT_SCOPE}_INTERFACE_TYPE STREQUAL "API"
+	AND NOT ${LOCAL_PROJECT_SCOPE}_INTERFACE_TYPE STREQUAL "CLI"
+	AND NOT ${LOCAL_PROJECT_SCOPE}_INTERFACE_TYPE STREQUAL "GUI"
+)
+	message(FATAL_ERROR "Invalid project configuration specified!\nInvalid interface type: ${${LOCAL_PROJECT_SCOPE}_INTERFACE_TYPE}")
+endif()
+
+if(${LOCAL_PROJECT_SCOPE}_PRODUCT_TYPE STREQUAL "Executable" AND ${LOCAL_PROJECT_SCOPE}_INTERFACE_TYPE STREQUAL "API")
+	message(FATAL_ERROR "Project configured as executable but attempting to create a library!")
 elseif(${LOCAL_PROJECT_SCOPE}_PRODUCT_TYPE STREQUAL "Library" AND NOT ${LOCAL_PROJECT_SCOPE}_INTERFACE_TYPE STREQUAL "API")
-	message(FATAL_ERROR "Project configured as a library API but attempting to create an executable!")
+	message(FATAL_ERROR "Project configured as a library but attempting to create an executable!")
+elseif(NOT ${LOCAL_PROJECT_SCOPE}_PRODUCT_TYPE STREQUAL "Executable" AND NOT ${LOCAL_PROJECT_SCOPE}_PRODUCT_TYPE STREQUAL "Library")
+	message(FATAL_ERROR "Invalid project configuration specified!\nInvalid product type: ${${LOCAL_PROJECT_SCOPE}_PRODUCT_TYPE}")
 endif()
 
 
