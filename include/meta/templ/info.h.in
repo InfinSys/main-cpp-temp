@@ -48,6 +48,12 @@ namespace @RESOLVED_SFTW_META_PREFIX@Metadata {
 
     /*!
     * @brief
+    * @RESOLVED_SFTW_PRODUCT_NAME@ license type.
+    */
+    const char* LICENSE_TYPE{ "@RESOLVED_SFTW_PRODUCT_LICENSE_TYPE@" };
+
+    /*!
+    * @brief
     * Software official name.
     */
     const char* OFFICIAL_NAME{ "@RESOLVED_SFTW_PRODUCT_NAME@" };
