@@ -32,7 +32,7 @@ namespace TEMPLATEMetadata {
     * @brief
     * <SOFTWARE_FULL_NAME> software type.
     */
-    const char* SOFTWARE_TYPE{ "Software" };
+    const char* SOFTWARE_TYPE{ "Executable" };
 
     /*!
     * @brief
