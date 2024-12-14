@@ -87,6 +87,12 @@ configure_file(
 )
 
 configure_file(
+	"${CMAKE_SOURCE_DIR}/docs/templ/Doxyfile.in"
+	"${CMAKE_SOURCE_DIR}/Doxyfile"
+	@ONLY
+)
+
+configure_file(
 	"${CMAKE_SOURCE_DIR}/include/meta/templ/version.h.in"
 	"${CMAKE_SOURCE_DIR}/include/meta/version.h"
 	@ONLY
