@@ -77,6 +77,12 @@ set(
 )
 
 configure_file(
+	"${CMAKE_SOURCE_DIR}/docs/templ/README.md.in"
+	"${CMAKE_SOURCE_DIR}/README.md"
+	@ONLY
+)
+
+configure_file(
 	"${CMAKE_SOURCE_DIR}/include/meta/templ/version.h.in"
 	"${CMAKE_SOURCE_DIR}/include/meta/version.h"
 	@ONLY
