@@ -88,7 +88,7 @@ configure_file(
 
 configure_file(
 	"${CMAKE_SOURCE_DIR}/docs/templ/Doxyfile.in"
-	"${CMAKE_SOURCE_DIR}/Doxyfile"
+	"${CMAKE_SOURCE_DIR}/docs/Doxyfile"
 	@ONLY
 )
 
