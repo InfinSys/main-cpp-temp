@@ -1,0 +1,23 @@
+
+/*!
+* @file version.h
+*
+* @brief
+* @RESOLVED_SFTW_PRODUCT_SHORT_NAME@ version document.
+*
+* @details
+* Version information for @RESOLVED_SFTW_PRODUCT_NAME@.
+*/
+
+
+
+#ifndef @RESOLVED_SFTW_META_HEADER_PREFIX@_METADATA_VERSION_STRUCT_H_
+#define @RESOLVED_SFTW_META_HEADER_PREFIX@_METADATA_VERSION_STRUCT_H_
+
+
+
+//
+
+
+
+#endif // @RESOLVED_SFTW_META_HEADER_PREFIX@_METADATA_VERSION_STRUCT_H_
