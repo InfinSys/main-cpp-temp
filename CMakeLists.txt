@@ -58,6 +58,6 @@ if(UNIT_TESTING)
 endif()
 
 if(CLI_DEBUGGING OR UNIT_TESTING)
-	#add_subdirectory(tests)
+	add_subdirectory(tests)
 endif()
 
