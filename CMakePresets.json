@@ -34,9 +34,7 @@
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}/install/${presetName}",
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_C_COMPILER": "gcc",
-                "CMAKE_CXX_COMPILER": "g++",
-                "<LOCAL_CMAKE_PROJECT_NAME>_PROJECT_TESTING": "ON",
-                "<LOCAL_CMAKE_PROJECT_NAME>_PROJECT_CLI_DEBUG": "ON"
+                "CMAKE_CXX_COMPILER": "g++"
             }
         },
         {
