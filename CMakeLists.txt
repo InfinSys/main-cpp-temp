@@ -21,6 +21,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 
+set(LOCAL_PROJECT_SCOPE "~auto~")
+string(TOUPPER "${LOCAL_CMAKE_PROJECT_NAME}" LOCAL_PROJECT_SCOPE)
+
 
 include(FetchContent)
 
@@ -50,7 +53,7 @@ endif()
 
 #include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include")
 
-#add_subdirectory(src)
+add_subdirectory(src)
 
 
 if(UNIT_TESTING)
