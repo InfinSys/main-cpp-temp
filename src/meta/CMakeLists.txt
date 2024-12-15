@@ -93,6 +93,12 @@ configure_file(
 )
 
 configure_file(
+	"${CMAKE_SOURCE_DIR}/docs/templ/inaug.md.in"
+	"${CMAKE_SOURCE_DIR}/docs/prj/inaug.md"
+	@ONLY
+)
+
+configure_file(
 	"${CMAKE_SOURCE_DIR}/include/meta/templ/version.h.in"
 	"${CMAKE_SOURCE_DIR}/include/meta/version.h"
 	@ONLY
