@@ -25,9 +25,6 @@ set(LOCAL_PROJECT_SCOPE "<~auto~>")
 string(TOUPPER "${LOCAL_CMAKE_PROJECT_NAME}" LOCAL_PROJECT_SCOPE)
 
 
-include(FetchContent)
-
-
 set(CLI_DEBUGGING OFF)
 set(UNIT_TESTING OFF)
 
