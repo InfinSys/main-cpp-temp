@@ -46,7 +46,7 @@ if(
 endif()
 
 if(${LOCAL_PROJECT_SCOPE}_PRODUCT_TYPE STREQUAL "Executable" AND ${LOCAL_PROJECT_SCOPE}_INTERFACE_TYPE STREQUAL "API")
-	message(FATAL_ERROR "Project configured as executable but attempting to create a library!")
+	message(FATAL_ERROR "Project configured as an executable but attempting to create a library!")
 elseif(${LOCAL_PROJECT_SCOPE}_PRODUCT_TYPE STREQUAL "Library" AND NOT ${LOCAL_PROJECT_SCOPE}_INTERFACE_TYPE STREQUAL "API")
 	message(FATAL_ERROR "Project configured as a library but attempting to create an executable!")
 elseif(NOT ${LOCAL_PROJECT_SCOPE}_PRODUCT_TYPE STREQUAL "Executable" AND NOT ${LOCAL_PROJECT_SCOPE}_PRODUCT_TYPE STREQUAL "Library")
